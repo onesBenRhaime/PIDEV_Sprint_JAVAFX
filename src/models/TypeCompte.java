@@ -20,7 +20,11 @@ public class TypeCompte {
         this.description = description;
     }
 
-    
+        public TypeCompte(String type) {
+        this.type = type;
+        
+    }
+
     public int getId() {
         return id;
     }

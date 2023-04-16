@@ -2,7 +2,6 @@
 package models;
 
 import java.sql.Date;
-import java.util.logging.Logger;
 
 public class Compte {
     
@@ -59,7 +58,9 @@ public class Compte {
         this.dateFermeture = dateFermeture;
     }
 
-    public Compte( String cinS1, String cinS2, String otherDoc, String maxSolde, String minSolde, String redSolde) {
+    public Compte(String cinS1, String cinS2, String otherDoc, String maxSolde, String minSolde, String redSolde) {
+       this.idUserId=idUserId;
+        this.idTypeId=idTypeId;
         this.cinS1 = cinS1;
         this.cinS2 = cinS2;
         this.otherDoc = otherDoc;
@@ -68,6 +69,20 @@ public class Compte {
         this.redSolde = redSolde;
     
     }
+
+    public Compte(int idUserId, int idTypeId ,String cinS1, String cinS2, String otherDoc, String maxSolde, String minSolde, String redSolde) {
+       this.idUserId=idUserId;
+        this.idTypeId=idTypeId;
+        this.cinS1 = cinS1;
+        this.cinS2 = cinS2;
+        this.otherDoc = otherDoc;
+        this.maxSolde = maxSolde;
+        this.minSolde = minSolde;
+        this.redSolde = redSolde;
+    
+    }
+
+  
 
     public int getId() {
         return id;

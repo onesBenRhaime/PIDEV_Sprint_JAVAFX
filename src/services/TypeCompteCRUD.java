@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import models.Compte;
 import utils.MyConnection;
 
 public class TypeCompteCRUD  implements IService<TypeCompte>{
@@ -82,7 +83,8 @@ public class TypeCompteCRUD  implements IService<TypeCompte>{
         return list;
 
     }
-//Test d'unicité
+    
+    //Test d'unicité
     public boolean Existe(String type) {
 
         String sql = "SELECT * FROM type_compte WHERE type = ?";
@@ -95,6 +97,28 @@ public class TypeCompteCRUD  implements IService<TypeCompte>{
             System.out.println(e.getMessage());
             return false;
         }
+    }
+ 
+      //Test d'unicité
+    public TypeCompte NameTypeByID(Compte compte) {
+
+        String sql = "SELECT type FROM type_compte WHERE id = ?";
+        try {
+            PreparedStatement pstmt = cnx.prepareStatement(sql);
+            pstmt.setInt(1, compte.getIdTypeId());
+            ResultSet rs = pstmt.executeQuery();
+            System.out.println(" ***"+compte.getIdTypeId());
+            while (rs.next()) {
+                TypeCompte t = new TypeCompte();   
+                  t.setType(rs.getString(1));
+           return  t;
+               
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+           return  null;
+        }
+         return null;
     }
  
     

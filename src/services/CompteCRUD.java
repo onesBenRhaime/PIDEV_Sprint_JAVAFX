@@ -15,8 +15,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import models.Compte;
-import models.Transaction;
-import models.TypeCompte;
 import utils.MyConnection;
 
 /**
@@ -36,7 +34,7 @@ public class CompteCRUD implements IService<Compte> {
             ps.setDate(1, Date.valueOf(LocalDate.now()));
             ps.setDate(2, Date.valueOf(LocalDate.now()));
             ps.setString(3, "in progress");
-            ps.setInt(4, 1);
+            ps.setInt(4, t.getIdUserId());
             ps.setInt(5, t.getIdTypeId());
             ps.setString(6, t.getCinS1());
             ps.setString(7, t.getCinS2());
@@ -107,5 +105,36 @@ public class CompteCRUD implements IService<Compte> {
 
         return list;
     }
+    
+    
+    public void accept(Compte t) throws SQLException {
+         try {
+            String query = "UPDATE compte SET statue=? WHERE id=?";
+            PreparedStatement stmt = cnx.prepareStatement(query);
+            stmt.setString(1, "valide");           
+            stmt.setInt(2, t.getId());
+            stmt.executeUpdate();
+
+            System.out.println(" demande compte  Accepted !");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }    
+    
+    public void reject(Compte t) throws SQLException {
+         try {
+            String query = "UPDATE compte SET statue=? WHERE id=?";
+            PreparedStatement stmt = cnx.prepareStatement(query);
+            stmt.setString(1, "rejected");           
+            stmt.setInt(2, t.getId());
+            stmt.executeUpdate();
+
+            System.out.println(" demande compte Rejected !");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    
 
 }

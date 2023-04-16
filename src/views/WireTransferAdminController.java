@@ -217,7 +217,7 @@ public class WireTransferAdminController implements Initializable {
     }
 
     
-       @FXML
+    @FXML
     private void refresh(ActionEvent event) throws SQLException {
         try {
             List<Transaction> transactions = transactionService.recuperer();

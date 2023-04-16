@@ -12,21 +12,24 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="647.0" prefWidth="1332.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.ComptesAdminController">
+<AnchorPane id="AnchorPane" prefHeight="666.0" prefWidth="1278.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.ComptesAdminController">
    <children>
-      <Label fx:id="welcomeLb" layoutX="315.0" layoutY="59.0" prefHeight="42.0" prefWidth="439.0" text="Accounts Demands">
+      <Label fx:id="welcomeLb" layoutX="315.0" layoutY="52.0" prefHeight="42.0" prefWidth="439.0" text="Accounts Demands">
          <font>
             <Font name="Arial Black" size="28.0" />
          </font>
       </Label>
-      <ScrollPane fx:id="scroll" layoutX="315.0" layoutY="164.0" prefHeight="348.0" prefWidth="957.0">
+      <ScrollPane fx:id="scroll" layoutX="315.0" layoutY="164.0" prefHeight="416.0" prefWidth="939.0">
          <content>
-            <TableView fx:id="tableview" prefHeight="338.0" prefWidth="953.0">
+            <TableView fx:id="tableview" prefHeight="400.0" prefWidth="956.0">
                <columns>
-                  <TableColumn fx:id="type" prefWidth="242.0" text="ACCOUNT TYPE" />
-                  <TableColumn fx:id="dateCol" minWidth="0.0" prefWidth="278.0" text="DATE DEMANDS" />
-                  <TableColumn fx:id="usercol" prefWidth="212.0" text="CLIENT" />
-                  <TableColumn fx:id="statuecol" prefWidth="220.0" text="STATUE" />
+                  <TableColumn fx:id="type" prefWidth="120.0" text="ACCOUNT TYPE" />
+                  <TableColumn fx:id="dateCol" minWidth="0.0" prefWidth="150.0" text="DATE DEMANDS" />
+                  <TableColumn fx:id="usercol" prefWidth="117.0" text="CLIENT" />
+                  <TableColumn fx:id="statuecol" prefWidth="122.0" text="STATUE" />
+                  <TableColumn fx:id="maxSoldefx" prefWidth="129.0" text="MAX SOLDE" />
+                  <TableColumn fx:id="minSoldefx" prefWidth="133.0" text="MIN SOLDE" />
+                  <TableColumn fx:id="redSoldefx" prefWidth="168.0" text="RED SOLDE" />
                </columns>
             </TableView>
          </content>
@@ -149,7 +152,12 @@
             </ScrollPane>
          </children>
       </VBox>
-      <Button layoutX="315.0" layoutY="537.0" mnemonicParsing="false" onAction="#details" prefHeight="57.0" prefWidth="194.0" style="-fx-background-color: #ffffff;" text="Details" textFill="#160a39">
+      <Button layoutX="1131.0" layoutY="591.0" mnemonicParsing="false" onAction="#Reject" prefHeight="31.0" prefWidth="123.0" style="-fx-background-color: #CF0000;" text="Reject " textFill="WHITE" />
+      <Button layoutX="997.0" layoutY="591.0" mnemonicParsing="false" onAction="#Accept" prefHeight="31.0" prefWidth="123.0" style="-fx-background-color: #057507;" text="Accept" textFill="WHITE" />
+      <Button layoutX="309.0" layoutY="596.0" mnemonicParsing="false" onAction="#details" prefHeight="16.0" prefWidth="42.0" style="-fx-background-color: #ffffff;" textFill="#160a39">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
          <graphic>
             <ImageView fitHeight="42.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -157,9 +165,7 @@
                </image>
             </ImageView>
          </graphic>
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
       </Button>
+      <Button fx:id="showC" layoutX="1069.0" layoutY="109.0" mnemonicParsing="false" onAction="#refresh" prefHeight="31.0" prefWidth="177.0" style="-fx-background-color: #CF0000;" stylesheets="@../../../elbaldi-test/src/elbaldi/GUI/style.css" text="Rafraîchir" />
    </children>
 </AnchorPane>

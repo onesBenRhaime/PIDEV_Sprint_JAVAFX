@@ -83,7 +83,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button alignment="BASELINE_LEFT" graphicTextGap="6.0" mnemonicParsing="false" onAction="#goToSendMoney" prefHeight="45.0" prefWidth="174.0" style="-fx-translate-y: 30; -fx-translate-x: 50; -fx-translate-z: 60; -fx-background-color: #CF0000;" stylesheets="@../../../../Nouveau%20dossier/Nouveau%20dossier/style.css" text="Send Money" textFill="#e7e5e5">
+            <Button alignment="BASELINE_LEFT" graphicTextGap="6.0" mnemonicParsing="false" onAction="#goToSendMoney" prefHeight="45.0" prefWidth="187.0" style="-fx-translate-y: 30; -fx-translate-x: 50; -fx-translate-z: 60; -fx-background-color: #CF0000;" stylesheets="@../../../../Nouveau%20dossier/Nouveau%20dossier/style.css" text="Send Money" textFill="#e7e5e5">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -98,7 +98,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button alignment="BASELINE_LEFT" graphicTextGap="7.0" mnemonicParsing="false" onAction="#goToAccounts" prefHeight="45.0" prefWidth="118.0" style="-fx-translate-y: 30; -fx-translate-x: 50; -fx-translate-z: 60; -fx-background-color: #CF0000;" stylesheets="@../../../../Nouveau%20dossier/Nouveau%20dossier/style.css" text="Accounts" textFill="#e7e5e5">
+            <Button alignment="BASELINE_LEFT" graphicTextGap="7.0" mnemonicParsing="false" onAction="#goToAccounts" prefHeight="45.0" prefWidth="185.0" style="-fx-translate-y: 30; -fx-translate-x: 50; -fx-translate-z: 60; -fx-background-color: #CF0000;" stylesheets="@../../../../Nouveau%20dossier/Nouveau%20dossier/style.css" text="Accounts" textFill="#e7e5e5">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>

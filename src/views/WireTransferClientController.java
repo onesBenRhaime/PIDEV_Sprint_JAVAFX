@@ -108,7 +108,7 @@ public class WireTransferClientController implements Initializable {
     @FXML
     private void goToAccounts(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ComptesClient.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("TypeCompteClient.fxml"));
             Parent root = loader.load();
             welcomeLb.getScene().setRoot(root);
         } catch (IOException ex) {

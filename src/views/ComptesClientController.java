@@ -57,12 +57,16 @@ public class ComptesClientController implements Initializable {
     @FXML
     private TableColumn<Compte, String> redSfx;
     @FXML
-    private TableColumn<Compte, String> statuefx;
-
+    private TableColumn<Compte, String> minSfx;
+    @FXML
+    private TableColumn<Compte, String>  maxSfx;
+    @FXML
+    private TableColumn<Compte, String>  statuefx;
+   
     
      CompteCRUD compteService = new  CompteCRUD();
      ObservableList<Compte> obs;
-   
+ 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        try {
@@ -75,10 +79,11 @@ public class ComptesClientController implements Initializable {
                 dateF.setCellValueFactory(new PropertyValueFactory<>("dateFermeture"));
                 soldefx.setCellValueFactory(new PropertyValueFactory<>("solde"));
                 redSfx.setCellValueFactory(new PropertyValueFactory<>("redSolde"));
-                statuefx.setCellValueFactory(new PropertyValueFactory<>("staute"));
-                
+                maxSfx.setCellValueFactory(new PropertyValueFactory<>("maxSolde"));
+                minSfx.setCellValueFactory(new PropertyValueFactory<>("minSolde"));
+                statuefx.setCellValueFactory(new PropertyValueFactory<>("staute"));               
 
-             } catch (SQLException ex) {
+            } catch (SQLException ex) {
                 System.err.println(ex.getMessage());
             }
     }  
@@ -152,7 +157,6 @@ public class ComptesClientController implements Initializable {
             } 
         }
     }
-    @FXML
     private void Delails(ActionEvent event) {
         
         try {

@@ -7,7 +7,10 @@ package views;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import services.TransactionCRUD;
 
 /**
  * FXML Controller class
@@ -23,24 +27,6 @@ import javafx.scene.control.Label;
  */
 public class ClientController implements Initializable {
 
-    @FXML
-    private Label totalproduits;
-    @FXML
-    private Label totalproduits1;
-    @FXML
-    private Label totalproduits2;
-    @FXML
-    private Label totalproduits3;
-    @FXML
-    private Label totalproduits11;
-    @FXML
-    private Label totalproduits21;
-    @FXML
-    private Label totalproduits31;
-    @FXML
-    private Label totalproduits111;
-    @FXML
-    private Label totalproduits211;
     @FXML
     private Button Accueilfx1;
     @FXML
@@ -55,13 +41,30 @@ public class ClientController implements Initializable {
     private Button Accueilfx161;
     @FXML
     private Label welcomeLb;
+    @FXML
+    private Label nbSendMoney;
+    @FXML
+    private Label nbAcceptT;
+    @FXML
+    private Label nbRejectT;
+    @FXML
+    private Label nbWireTransfer;
 
     /**
      * Initializes the controller class.
      */
+     TransactionCRUD transactionService = new TransactionCRUD();
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        try {
+            nbSendMoney.setText(Integer.toString(transactionService.nbSendMoney()));
+            nbWireTransfer.setText(Integer.toString(transactionService.nbWireTransfer()));            
+            nbAcceptT.setText(Integer.toString(transactionService.nbAcceptedWireTransfer()));           
+            nbRejectT.setText(Integer.toString(transactionService.nbRejectedWireTransfer()));
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ClientController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }    
     
     @FXML

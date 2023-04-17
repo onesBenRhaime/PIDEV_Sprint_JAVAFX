@@ -51,7 +51,7 @@ public class TypeCompte {
 
     @Override
     public String toString() {
-        return "TypeCompte{" + "id=" + id + ", type=" + type + ", description=" + description + '}';
+        return type ;
     }
        
        

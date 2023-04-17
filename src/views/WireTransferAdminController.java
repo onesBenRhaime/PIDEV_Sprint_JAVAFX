@@ -30,6 +30,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import models.Transaction;
+import services.PdfTransaction;
 import services.TransactionCRUD;
 
 /**
@@ -66,6 +67,10 @@ public class WireTransferAdminController implements Initializable {
 
     TransactionCRUD transactionService = new TransactionCRUD();
     ObservableList<Transaction> obs;
+    @FXML
+    private Button showC;
+    @FXML
+    private Button imprimer;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -235,6 +240,20 @@ public class WireTransferAdminController implements Initializable {
             System.err.println(ex.getMessage());
         }
          
+    }
+
+    @FXML
+    private void Pdf(ActionEvent event) {
+             int selectedIndex = obs.indexOf(tableview.getSelectionModel().getSelectedItem());
+                
+            PdfTransaction pdf = new PdfTransaction();       
+            pdf.orderPdf(obs.get(selectedIndex));
+             Alert alert0 = new Alert(Alert.AlertType.INFORMATION);
+            alert0.setTitle("Information dialog box");
+            alert0.setHeaderText(null);
+            alert0.setContentText("The pdf file has been exported successfully. ");
+            alert0.show();
+        
     }
     
     

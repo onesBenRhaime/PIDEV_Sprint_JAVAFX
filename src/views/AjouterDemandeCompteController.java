@@ -51,8 +51,6 @@ public class AjouterDemandeCompteController implements Initializable {
     @FXML
     private Label welcomeLb11;
     @FXML
-    private TextField accountfx;
-    @FXML
     private TextField maxAfx;
     @FXML
     private Label side1fx;
@@ -234,7 +232,7 @@ public class AjouterDemandeCompteController implements Initializable {
             String other = otherfx.getText();
           //  System.out.println(side1);
             
-           TypeCompte c = typesfx.getSelectionModel().getSelectedItem();
+            TypeCompte c = typesfx.getSelectionModel().getSelectedItem();
             System.out.println(c);
             Compte tc = new Compte(2, c.getId(), side1, side2, other, maxAmount, minAmount, redaccount);
 

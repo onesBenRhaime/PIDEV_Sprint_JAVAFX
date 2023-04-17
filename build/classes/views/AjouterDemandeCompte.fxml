@@ -128,7 +128,6 @@
          </font>
       </Label>
       <Button layoutX="989.0" layoutY="745.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="31.0" prefWidth="253.0" style="-fx-background-color: #057507;" text="Save" textFill="WHITE" />
-      <TextField fx:id="accountfx" layoutX="107.0" layoutY="347.0" prefHeight="31.0" prefWidth="744.0" />
       <Label layoutX="105.0" layoutY="296.0" prefHeight="35.0" prefWidth="188.0" text="Account Type">
          <font>
             <Font size="18.0" />
@@ -178,6 +177,6 @@
          </font>
       </Label>
       <TextField fx:id="redAfx" layoutX="890.0" layoutY="432.0" prefHeight="31.0" prefWidth="332.0" />
-      <ComboBox fx:id="typesfx" layoutX="891.0" layoutY="347.0" prefHeight="31.0" prefWidth="332.0" />
+      <ComboBox fx:id="typesfx" layoutX="105.0" layoutY="347.0" prefHeight="31.0" prefWidth="1118.0" promptText="Select a Type" />
    </children>
 </AnchorPane>

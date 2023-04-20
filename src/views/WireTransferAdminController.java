@@ -31,6 +31,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import models.Transaction;
 import services.PdfTransaction;
+import services.SmsServicee;
 import services.TransactionCRUD;
 
 /**
@@ -172,6 +173,10 @@ public class WireTransferAdminController implements Initializable {
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == buttonTypeYes) {
                 transactionService.reject(obs.get(selectedIndex));
+                   SmsServicee sms = new SmsServicee();
+                    
+                    String message ="Votre Transaction à ete réfusé";
+                      sms.sendSms(message);
             }
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -208,7 +213,18 @@ public class WireTransferAdminController implements Initializable {
             // Afficher la boîte de dialogue et attendre la réponse de l'utilisateur
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == buttonTypeYes) {
-                transactionService.accept(obs.get(selectedIndex));
+                transactionService.accept(obs.get(selectedIndex));                
+                   //MailerService ms = new MailerService();
+                  //ms.sendLivraisonMail(livrai, livrai.getC1());
+                    SmsServicee sms = new SmsServicee();
+                
+                    String message ="Votre Transaction à ete accepté";
+                    
+                  sms.sendSms( message);
+                
+                
+                
+                
             }
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);

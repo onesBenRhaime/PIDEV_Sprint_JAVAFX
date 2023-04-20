@@ -161,7 +161,7 @@
             </ScrollPane>
          </children>
       </VBox>
-      <Button fx:id="showC" layoutX="1192.0" layoutY="124.0" mnemonicParsing="false" onAction="#refresh" prefHeight="31.0" prefWidth="130.0" style="-fx-background-color: #CF0000;" stylesheets="@../../../elbaldi-test/src/elbaldi/GUI/style.css" text="Rafraîchir" />
-      <Button fx:id="imprimer" layoutX="1044.0" layoutY="124.0" mnemonicParsing="false" onAction="#Pdf" prefHeight="31.0" prefWidth="122.0" style="-fx-background-color: #CF0000;" stylesheets="@../../../elbaldi-test/src/elbaldi/GUI/style.css" text="Imprimer" />
+      <Button fx:id="showC" layoutX="1032.0" layoutY="124.0" mnemonicParsing="false" onAction="#refresh" prefHeight="31.0" prefWidth="130.0" style="-fx-background-color: #CF0000;" stylesheets="@../../../elbaldi-test/src/elbaldi/GUI/style.css" text="Rafraîchir" />
+      <Button fx:id="imprimer" layoutX="1183.0" layoutY="124.0" mnemonicParsing="false" onAction="#Pdf" prefHeight="31.0" prefWidth="122.0" style="-fx-background-color: #000000;" stylesheets="@../../../elbaldi-test/src/elbaldi/GUI/style.css" text="Imprimer" />
    </children>
 </AnchorPane>

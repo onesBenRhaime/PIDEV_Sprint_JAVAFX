@@ -198,6 +198,7 @@ public class TransactionCRUD implements IService<Transaction> {
             stmt.executeUpdate();
 
             System.out.println("Transaction Rejected !");
+                 
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
